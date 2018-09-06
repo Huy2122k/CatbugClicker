@@ -13,6 +13,10 @@
             border-radius:5px;
             background-color:gold;
         }
+        #catbugHappyButton{
+            border-radius:5px;
+            background-color:gold;
+        }
     </style>
     <script>
             let number = 0;
@@ -28,8 +32,17 @@
                 }
                 document.getElementById("counter").innerHTML = number;
             }
-            function switchCostume(image, picture){
-                document.getElementById(image).src = picture;
+
+            let ownsCatbugHappy = false;
+            function switchCostume(costume, price){
+                if(costume == 'catbugHappy'){
+                    if(price <= number || ownsCatbugHappy === true){
+                        number -= price;
+                        ownsCatbugHappy = true;
+                        document.getElementById("buttonPic").src = "CatbugHappy.png";
+                        document.getElementById("buttonPic").style = "width:100px; height:125px;";
+                    }
+                }
             }
     </script>
 </head>
@@ -37,11 +50,11 @@
     <div align="center">
         <!--Counter and Click button-->
         <p id="counter">0</p>
-        <button id="counterbutton" onclick="count();"><image id="buttonPic" style="width:100px; height:125px;" src="CatbugHappy.png"></image> </button><br><br>
+        <button id="counterbutton" onclick="count();"><image id="buttonPic" style="width:200px; height:125px;" src="CatbugCalm.png"></image> </button><br><br>
         <!--Upgrade Buttons-->
         <button id="upgrade1" onclick="upgrade(1, 100);">+1 clicks cost:100 clicks</button><br>
-        <button id="upgrade2" onclick="upgrade(5, 450);">+5 clicks cost:450 clicks</button>
-        <button onclick="switchCostume('buttonPic')">Something</button>
+        <button id="upgrade2" onclick="upgrade(5, 450);">+5 clicks cost:450 clicks</button><br>
+        <!--Costume Buttons-->
+        <button id="catbugHappyButton" onclick="switchCostume('catbugHappy', 225)">Happy cost:225</button>
     </div>
-    <br><br><font size="1">Made by Jacob Lawrence For Connor's Birthday!</font>
 </body>
