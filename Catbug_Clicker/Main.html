@@ -62,15 +62,19 @@
     </style>
     <script>
             let number = 0;
+            let upgradePrice1 = 100;
+            let upgradePrice2 = 450;
             let numClicks = 1;
             function count(){
                 number += numClicks;
                 document.getElementById("counter").innerHTML = number;
             }
-            function upgrade(amount, price){
+            function upgrade(amount, price, message, id){
                 if(price <= number){
                     number -= price;
                     numClicks += amount;
+                    price += 50;
+                    document.getElementById(id).innerHTML = message + price + " clicks";
                 }
                 document.getElementById("counter").innerHTML = number;
             }
@@ -206,8 +210,8 @@
         <button id="counterbutton" onclick="count();"><img id="buttonPic" style="width:200px; height:125px;" src="CatbugCalm.png"></img> </button><br><br>
 
         <!--Upgrade Buttons-->
-        <button id="upgrade1" onclick="upgrade(1, 100);">+1 clicks cost:100 clicks</button><br>
-        <button id="upgrade2" onclick="upgrade(5, 450);">+5 clicks cost:450 clicks</button><br><br>
+        <button id="upgrade1" onclick="upgrade(1, 100, '+1 clicks cost:',  'upgrade1');">+1 clicks cost:100 clicks</button><br>
+        <button id="upgrade2" onclick="upgrade(5, 450, '+5 clicks cost:', 'upgrade2');">+5 clicks cost:450 clicks</button><br><br>
         <!--Costume Buttons-->
         <button id="catbugHappyButton" onclick="switchCostume('catbugHappy', 225)">Happy cost:225</button><br>
         <button id="catbugCerealButton" onclick="switchCostume('catbugCereal', 300);">Cereal cost:300</button><br>
