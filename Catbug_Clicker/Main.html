@@ -40,6 +40,14 @@
             border-radius:5px;
             background-color:gold;
         }
+        #catbugPixelButton{
+            border-radius:5px;
+            background-color:gold;
+        }
+        #catbugKingButton{
+            border-radius:5px;
+            background-color:gold;
+        }
     </style>
     <script>
             let number = 0;
@@ -59,6 +67,11 @@
             let ownsCatbugHappy = false;
             let ownsCatbugCereal = false;
             let ownsCatbugBug = false;
+            let ownsCatbugFanArt = false;
+            let ownsCatbugGloves = false;
+            let ownsCatbugPixel = false;
+            let ownsCatbugKing = false;
+            let ownsCatbugUkelele = false;
 
             function switchCostume(costume, price){
                 if(costume == 'catbugHappy'){
@@ -68,6 +81,7 @@
                         document.getElementById("buttonPic").src = "CatbugHappy.png";
                         document.getElementById("buttonPic").style = "width:100px; height:125px;";
                         document.getElementById("catbugHappyButton").innerHTML = "Happy";
+                        document.getElementById("counter").innerHTML = number;
                     }
                 }
                 else if(costume == 'catbugCereal'){
@@ -77,32 +91,68 @@
                         document.getElementById("buttonPic").src = "CatbugCereal.jpg";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
                         document.getElementById("catbugCerealButton").innerHTML = "Cereal";
+                        document.getElementById("counter").innerHTML = number;
                     }
                 }
                 else if(costume == 'catbugBug'){
-                    if(price <= number || ownsCatBugBug){
+                    if(price <= number || ownsCatbugBug == true){
                         number -= price;
                         ownsCatbugBug = true;                            
                         document.getElementById("buttonPic").src = "CatbugBug.gif";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
                         document.getElementById("catbugBugButton").innerHTML = "Bug";
+                        document.getElementById("counter").innerHTML = number;
                     }
                 }
                 else if(costume == 'catbugFanArt'){
-                    if(price <= number || ownsCatBugFanArt){
+                    if(price <= number || ownsCatbugFanArt == true){
                         number -= price;
                         ownsCatbugBug = true;                            
                         document.getElementById("buttonPic").src = "CatbugFanart.png";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
                         document.getElementById("catbugFanArtButton").innerHTML = "Fan Art";
+                        document.getElementById("counter").innerHTML = number;
                     }
                 }
                 else if(costume == 'catbugGloves'){
+                    if(price <= number || ownsCatbugGloves == true){
                         number -= price;
                         ownsCatbugBug = true;                            
                         document.getElementById("buttonPic").src = "CatbugGloves.jpg";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
                         document.getElementById("catbugGlovesButton").innerHTML = "Oven Mits";
+                        document.getElementById("counter").innerHTML = number;
+                    }
+                }
+                else if(costume == 'catbugPixel'){
+                    if(price <= number || ownsCatbugPixel == true){
+                        number -= price;
+                        ownsCatbugBug = true;                            
+                        document.getElementById("buttonPic").src = "CatbugPixel.gif";
+                        document.getElementById("buttonPic").style = "width:200px; height:200px;";
+                        document.getElementById("catbugPixelButton").innerHTML = "Pixel";
+                        document.getElementById("counter").innerHTML = number;
+                    }
+                }
+                else if(costume == 'catbugKing'){
+                    if(price <= number || ownsCatbugKing == true){
+                        number -= price;
+                        ownsCatbugBug = true;                            
+                        document.getElementById("buttonPic").src = "CatbugKing.gif";
+                        document.getElementById("buttonPic").style = "width:200px; height:200px;";
+                        document.getElementById("catbugKingButton").innerHTML = "King";
+                        document.getElementById("counter").innerHTML = number;
+                    }
+                }
+                else if(costume == 'catbugUkelele'){
+                    if(price <= number || ownsCatbugUkelele){
+                        number = number - price;
+                        ownsCatbugBug = true;                            
+                        document.getElementById("buttonPic").src = "CatbugUkelele.gif";
+                        document.getElementById("buttonPic").style = "width:200px; height:200px;";
+                        document.getElementById("catbugUkeleleButton").innerHTML = "Ukelele";
+                        document.getElementById("counter").innerHTML = number;
+                    }
                 }
                 
             }
@@ -125,6 +175,9 @@
         <button id="catbugCerealButton" onclick="switchCostume('catbugCereal', 300);">Cereal cost:300</button><br>
         <button id="catbugBugButton" onclick="switchCostume('catbugBug', 350);">Bug cost:350</button><br>
         <button id="catbugFanArtButton" onclick="switchCostume('catbugFanArt', 375);">Fan Art cost:375</button><br>
-        <button id="catbugGlovesButton" onclick="switchCostume('catbugGloves', 1)">Oven Mits cost:400</button><br>
+        <button id="catbugGlovesButton" onclick="switchCostume('catbugGloves', 400);">Oven Mits cost:400</button><br>
+        <button id="catbugPixelButton" onclick="switchCostume('catbugPixel', 500);">Pixel Animated cost:500</button><br>
+        <button id="catbugKingButton" onclick="switchCostume('catbugKing', 550);">King Animated cost:550</button><br>
+        <button id="catbugUkeleleButton" onclick="switchCostume('catbugUkelele', 600);">Ukelele Animated cost:600</button><br>
     </div>
 </body>
