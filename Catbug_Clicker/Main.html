@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <head>
     <title>Catbug Clicker</title>
     <style>
@@ -72,11 +74,14 @@
             let ownsCatbugPixel = false;
             let ownsCatbugKing = false;
             let ownsCatbugUkelele = false;
+            let ownsCatbugSugarPeas = false;
 
             function switchCostume(costume, price){
                 if(costume == 'catbugHappy'){
                     if(price <= number || ownsCatbugHappy === true){
-                        number -= price;
+                        if(ownsCatbugHappy == false){
+                            number = number - price;
+                        }
                         ownsCatbugHappy = true;
                         document.getElementById("buttonPic").src = "CatbugHappy.png";
                         document.getElementById("buttonPic").style = "width:100px; height:125px;";
@@ -86,7 +91,9 @@
                 }
                 else if(costume == 'catbugCereal'){
                     if(price <= number || ownsCatbugCereal === true){
-                        number -= price;
+                        if(ownsCatbugCereal == false){
+                            number = number - price;
+                        }
                         ownsCatbugCereal = true;                            
                         document.getElementById("buttonPic").src = "CatbugCereal.jpg";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
@@ -96,7 +103,9 @@
                 }
                 else if(costume == 'catbugBug'){
                     if(price <= number || ownsCatbugBug == true){
-                        number -= price;
+                        if(ownsCatbugBug == false){
+                            number = number - price;
+                        }
                         ownsCatbugBug = true;                            
                         document.getElementById("buttonPic").src = "CatbugBug.gif";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
@@ -106,7 +115,9 @@
                 }
                 else if(costume == 'catbugFanArt'){
                     if(price <= number || ownsCatbugFanArt == true){
-                        number -= price;
+                        if(ownsCatbugFanArt == false){
+                            number = number - price;
+                        }
                         ownsCatbugBug = true;                            
                         document.getElementById("buttonPic").src = "CatbugFanart.png";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
@@ -116,7 +127,9 @@
                 }
                 else if(costume == 'catbugGloves'){
                     if(price <= number || ownsCatbugGloves == true){
-                        number -= price;
+                        if(ownsCatbugGloves == false){
+                            number = number - price;
+                        }
                         ownsCatbugBug = true;                            
                         document.getElementById("buttonPic").src = "CatbugGloves.jpg";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
@@ -126,7 +139,9 @@
                 }
                 else if(costume == 'catbugPixel'){
                     if(price <= number || ownsCatbugPixel == true){
-                        number -= price;
+                        if(ownsCatbugPixel == false){
+                            number = number - price;
+                        }
                         ownsCatbugBug = true;                            
                         document.getElementById("buttonPic").src = "CatbugPixel.gif";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
@@ -136,7 +151,9 @@
                 }
                 else if(costume == 'catbugKing'){
                     if(price <= number || ownsCatbugKing == true){
-                        number -= price;
+                        if(ownsCatbugKing == false){
+                            number = number - price;
+                        }
                         ownsCatbugBug = true;                            
                         document.getElementById("buttonPic").src = "CatbugKing.gif";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
@@ -145,8 +162,10 @@
                     }
                 }
                 else if(costume == 'catbugUkelele'){
-                    if(price <= number || ownsCatbugUkelele){
-                        number = number - price;
+                    if(price <= number || ownsCatbugUkelele == true){
+                        if(ownsCatbugUkelele == false){
+                            number = number - price;
+                        }
                         ownsCatbugBug = true;                            
                         document.getElementById("buttonPic").src = "CatbugUkelele.gif";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
@@ -154,7 +173,18 @@
                         document.getElementById("counter").innerHTML = number;
                     }
                 }
-                
+                else if(costume == 'catbugSugarPeas'){
+                    if(price <= number || ownsCatbugSugarPeas == true){
+                        if(ownsCatbugSugarPeas == false){
+                            number = number - price;
+                        }
+                        ownsCatbugBug = true;                            
+                        document.getElementById("buttonPic").src = "CatbugSugarPeas.gif";
+                        document.getElementById("buttonPic").style = "width:200px; height:200px;";
+                        document.getElementById("catbugSugarPeasButton").innerHTML = "Sugar Peas";
+                        document.getElementById("counter").innerHTML = number;
+                    }
+                }                
             }
     </script>
 </head>
@@ -164,12 +194,11 @@
         <div align="center" class="counter">
             <b><p id="counter">0</p></b><br>
         </div>
-
         <button id="counterbutton" onclick="count();"><img id="buttonPic" style="width:200px; height:125px;" src="CatbugCalm.png"></img> </button><br><br>
 
         <!--Upgrade Buttons-->
         <button id="upgrade1" onclick="upgrade(1, 100);">+1 clicks cost:100 clicks</button><br>
-        <button id="upgrade2" onclick="upgrade(5, 450);">+5 clicks cost:450 clicks</button><br>
+        <button id="upgrade2" onclick="upgrade(5, 450);">+5 clicks cost:450 clicks</button><br><br>
         <!--Costume Buttons-->
         <button id="catbugHappyButton" onclick="switchCostume('catbugHappy', 225)">Happy cost:225</button><br>
         <button id="catbugCerealButton" onclick="switchCostume('catbugCereal', 300);">Cereal cost:300</button><br>
@@ -181,3 +210,4 @@
         <button id="catbugUkeleleButton" onclick="switchCostume('catbugUkelele', 600);">Ukelele Animated cost:600</button><br>
     </div>
 </body>
+</html>
