@@ -17,6 +17,10 @@
             border-radius:5px;
             background-color:gold;
         }
+        #catbugCerealButton{
+            border-radius:5px;
+            background-color:gold;
+        }
     </style>
     <script>
             let number = 0;
@@ -34,6 +38,9 @@
             }
 
             let ownsCatbugHappy = false;
+            let ownsCatbugCereal = false;
+            let ownsCatbugBug = false;
+
             function switchCostume(costume, price){
                 if(costume == 'catbugHappy'){
                     if(price <= number || ownsCatbugHappy === true){
@@ -41,12 +48,32 @@
                         ownsCatbugHappy = true;
                         document.getElementById("buttonPic").src = "CatbugHappy.png";
                         document.getElementById("buttonPic").style = "width:100px; height:125px;";
+                        document.getElementById("catbugHappyButton").innerHTML = "Happy";
                     }
                 }
+                else if(costume == 'catbugCereal'){
+                    if(price <= number || ownsCatbugCereal === true){
+                        number -= price;
+                        ownsCatbugCereal = true;                            
+                        document.getElementById("buttonPic").src = "CatbugCereal.jpg";
+                        document.getElementById("buttonPic").style = "width:200px; height:200px;";
+                        document.getElementById("catbugCerealButton").innerHTML = "Cereal";
+                    }
+                }
+                else if(costume == 'catbugBug'){
+                    if(price <= number || ownsCatBugBug){
+                        number -= price;
+                        ownsCatbugBug = true;                            
+                        document.getElementById("buttonPic").src = "CatbugBug.gif";
+                        document.getElementById("buttonPic").style = "width:200px; height:200px;";
+                        document.getElementById("catbugBugButton").innerHTML = "Bug";
+                    }
+                }
+                
             }
     </script>
 </head>
-<body>
+<body background="Background1.jpg" >
     <div align="center">
         <!--Counter and Click button-->
         <p id="counter">0</p>
@@ -55,6 +82,8 @@
         <button id="upgrade1" onclick="upgrade(1, 100);">+1 clicks cost:100 clicks</button><br>
         <button id="upgrade2" onclick="upgrade(5, 450);">+5 clicks cost:450 clicks</button><br>
         <!--Costume Buttons-->
-        <button id="catbugHappyButton" onclick="switchCostume('catbugHappy', 225)">Happy cost:225</button>
+        <button id="catbugHappyButton" onclick="switchCostume('catbugHappy', 225)">Happy cost:225</button><br>
+        <button id="catbugCerealButton" onclick="switchCostume('catbugCereal', 300);">Cereal cost:300</button><br>
+        <button id="catbugBugButton" onclick="switchCostume('catbugBug', 350);">Bug cost:350</button><br>
     </div>
 </body>
