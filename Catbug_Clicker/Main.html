@@ -113,7 +113,7 @@
                         if(ownsCatbugFanArt == false){
                             number = number - price;
                         }
-                        ownsCatbugBug = true;                            
+                        ownsCatbugFanArt = true;                            
                         document.getElementById("buttonPic").src = "CatbugFanart.png";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
                         document.getElementById("catbugFanArtButton").innerHTML = "Fan Art";
@@ -121,11 +121,15 @@
                     }
                 }
                 else if(costume == 'catbugGloves'){
+                    console.log("if this isnt here we got a problem");
                     if(price <= number || ownsCatbugGloves === true){
+                        console.log("1");
                         if(ownsCatbugGloves == false){
                             number = number - price;
+                            console.log("2");
                         }
-                        ownsCatbugBug = true;                            
+                        console.log("3");
+                        ownsCatbugGloves = true;                            
                         document.getElementById("buttonPic").src = "CatbugGloves.jpg";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
                         document.getElementById("catbugGlovesButton").innerHTML = "Oven Mits";
@@ -137,7 +141,7 @@
                         if(ownsCatbugPixel == false){
                             number = number - price;
                         }
-                        ownsCatbugBug = true;                            
+                        ownsCatbugPixel = true;                            
                         document.getElementById("buttonPic").src = "CatbugPixel.gif";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
                         document.getElementById("catbugPixelButton").innerHTML = "Pixel";
@@ -149,7 +153,7 @@
                         if(ownsCatbugKing == false){
                             number = number - price;
                         }
-                        ownsCatbugBug = true;                            
+                        ownsCatbugKing = true;                            
                         document.getElementById("buttonPic").src = "CatbugKing.gif";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
                         document.getElementById("catbugKingButton").innerHTML = "King";
@@ -161,7 +165,7 @@
                         if(ownsCatbugUkelele == false){
                             number = number - price;
                         }
-                        ownsCatbugBug = true;                            
+                        ownsCatbugUkelele = true;                            
                         document.getElementById("buttonPic").src = "CatbugUkelele.gif";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
                         document.getElementById("catbugUkeleleButton").innerHTML = "Ukelele";
@@ -173,7 +177,7 @@
                         if(ownsCatbugSugarPeas == false){
                             number = number - price;
                         }
-                        ownsCatbugBug = true;                            
+                        ownsCatbugSugarPeas = true;                            
                         document.getElementById("buttonPic").src = "CatbugSugarPeas.gif";
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
                         document.getElementById("catbugSugarPeasButton").innerHTML = "Sugar Peas";
