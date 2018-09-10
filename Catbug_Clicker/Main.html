@@ -14,51 +14,20 @@
             border:0px;
             background:none;
         }
-        #upgrade1{
+        .upgradeButtons button{
+            margin:2px;
+            padding:5px;
             border-radius:5px;
             background-color:gold;
+            border-color:black;
         }
-        #upgrade2{
+        .costumeButtons button{
+            margin:2px;
             border-radius:5px;
             background-color:gold;
+            padding:5px;
+            border-color:black;
         }
-        #catbugHappyButton{
-            border-radius:5px;
-            background-color:gold;
-        }
-        #catbugCerealButton{
-            border-radius:5px;
-            background-color:gold;
-        }
-        #catbugBugButton{
-            border-radius:5px;
-            background-color:gold;
-        }
-        #catbugFanArtButton{
-            border-radius:5px;
-            background-color:gold;
-        }
-        #catbugGlovesButton{
-            border-radius:5px;
-            background-color:gold;
-        }
-        #catbugPixelButton{
-            border-radius:5px;
-            background-color:gold;
-        }
-        #catbugKingButton{
-            border-radius:5px;
-            background-color:gold;
-        }
-        #catbugUkeleleButton{
-            border-radius:5px;
-            background-color:gold;
-        }
-        #catbugSugarPeasButton{
-            border-radius:5px;
-            background-color:gold;
-        }
-
     </style>
     <script>
             let number = 0;
@@ -223,18 +192,22 @@
         <button id="counterbutton" onclick="count();"><img id="buttonPic" style="width:200px; height:125px;" src="CatbugCalm.png"></button><br><br>
 
         <!--Upgrade Buttons-->
-        <button id="upgrade1" onclick="upgrade(1, '+1 clicks cost:',  'upgrade1', upgradePrice1);">+1 clicks cost:100 clicks</button><br>
-        <button id="upgrade2" onclick="upgrade(5, '+5 clicks cost:', 'upgrade2', upgradePrice2);">+5 clicks cost:450 clicks</button><br><br>
+        <div class="upgradeButtons">
+            <button id="upgrade1" onclick="upgrade(1, '+1 clicks cost:',  'upgrade1', upgradePrice1);">+1 clicks cost:100 clicks</button><br>
+            <button id="upgrade2" onclick="upgrade(5, '+5 clicks cost:', 'upgrade2', upgradePrice2);">+5 clicks cost:450 clicks</button><br><br>
+        </div>
         <!--Costume Buttons-->
-        <button id="catbugHappyButton" onclick="switchCostume('catbugHappy', 225)">Happy cost:225</button><br>
-        <button id="catbugCerealButton" onclick="switchCostume('catbugCereal', 300);">Cereal cost:300</button><br>
-        <button id="catbugBugButton" onclick="switchCostume('catbugBug', 350);">Bug cost:350</button><br>
-        <button id="catbugFanArtButton" onclick="switchCostume('catbugFanArt', 375);">Fan Art cost:375</button><br>
-        <button id="catbugGlovesButton" onclick="switchCostume('catbugGloves', 400);">Oven Mits cost:400</button><br>
-        <button id="catbugPixelButton" onclick="switchCostume('catbugPixel', 500);">Pixel Animated cost:500</button><br>
-        <button id="catbugKingButton" onclick="switchCostume('catbugKing', 550);">King Animated cost:550</button><br>
-        <button id="catbugUkeleleButton" onclick="switchCostume('catbugUkelele', 600);">Ukelele Animated cost:600</button><br>
-        <button id="catbugSugarPeasButton" onclick="switchCostume('catbugSugarPeas', 700);">Sugar Peas Animated cost:700</button>
+        <div class="costumeButtons">
+            <button id="catbugHappyButton" onclick="switchCostume('catbugHappy', 225)">Happy cost:225</button><br>
+            <button id="catbugCerealButton" onclick="switchCostume('catbugCereal', 300);">Cereal cost:300</button><br>
+            <button id="catbugBugButton" onclick="switchCostume('catbugBug', 350);">Bug cost:350</button><br>
+            <button id="catbugFanArtButton" onclick="switchCostume('catbugFanArt', 375);">Fan Art cost:375</button><br>
+            <button id="catbugGlovesButton" onclick="switchCostume('catbugGloves', 400);">Oven Mits cost:400</button><br>
+            <button id="catbugPixelButton" onclick="switchCostume('catbugPixel', 500);">Pixel Animated cost:500</button><br>
+            <button id="catbugKingButton" onclick="switchCostume('catbugKing', 550);">King Animated cost:550</button><br>
+            <button id="catbugUkeleleButton" onclick="switchCostume('catbugUkelele', 600);">Ukelele Animated cost:600</button><br>
+            <button id="catbugSugarPeasButton" onclick="switchCostume('catbugSugarPeas', 700);">Sugar Peas Animated cost:700</button>
+        </div>
     </div>
 </body>
 </html>
