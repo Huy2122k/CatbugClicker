@@ -30,10 +30,16 @@
         }
     </style>
     <script>
+            console.log("So nice of you to stop by. If you want to see the code, go to my GitHub.")
             let number = 0;
             let upgradePrice1 = 100;
             let upgradePrice2 = 450;
             let numClicks = 1;
+            let trigger = null;
+            let time = null;
+            let timer = setInterval(trigger, time);
+
+
             function count(){
                 number += numClicks;
                 document.getElementById("counter").innerHTML = number;
@@ -60,6 +66,7 @@
                 document.getElementById("counter").innerHTML = number;
                 console.log("printed new amount");
             }
+
 
             let ownsCatbugHappy = false;
             let ownsCatbugCereal = false;
@@ -182,8 +189,21 @@
                         document.getElementById("buttonPic").style = "width:200px; height:200px;";
                         document.getElementById("catbugSugarPeasButton").innerHTML = "Sugar Peas";
                         document.getElementById("counter").innerHTML = number;
+                        
                     }
-                }                
+                }
+                if(costume == 'catbugUkelele'){
+                    clearInterval(timer);
+                    timer = setInterval(count, 5000);
+                }
+                else if(costume == 'catbugSugarPeas'){
+                    clearInterval(timer);
+                    timer = setInterval(count, 1000);
+                }
+                else{
+                    clearInterval(timer);
+                    timer = setInterval(trigger, time);
+                }
             }
     </script>
 </head>
@@ -209,8 +229,8 @@
             <button id="catbugGlovesButton" onclick="switchCostume('catbugGloves', 700);">Oven Mits cost:700</button><br>
             <button id="catbugPixelButton" onclick="switchCostume('catbugPixel', 800);">Pixel Animated cost:800</button><br>
             <button id="catbugKingButton" onclick="switchCostume('catbugKing', 900);">King Animated cost:900</button><br>
-            <button id="catbugUkeleleButton" onclick="switchCostume('catbugUkelele', 1000);">Ukelele Animated cost:1000</button><br>
-            <button id="catbugSugarPeasButton" onclick="switchCostume('catbugSugarPeas', 1100);">Sugar Peas Animated cost:1100</button>
+            <button id="catbugUkeleleButton" onclick="switchCostume('catbugUkelele', 1000);">Ukelele Animated boost:1 click per 5 seconds cost:1000</button><br>
+            <button id="catbugSugarPeasButton" onclick="switchCostume('catbugSugarPeas', 1100);">Sugar Peas Animated boost:1 click per second cost:1100</button>
         </div>
     </div>
 </body>
